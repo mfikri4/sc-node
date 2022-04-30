@@ -1,0 +1,16 @@
+<aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+    <div class="p-6">
+    <a href="/user" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">User</a>
+    </div>
+    <nav class="text-white text-base font-semibold pt-3">
+        <a href="/user" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <i class="fas fa-user-alt mr-3"></i>User
+        </a>
+    </nav>
+    <form action="/user/logout" method="POST">
+        <button href="" class="absolute w-full upgrade-btn bottom-14 active-nav-link text-white flex items-center justify-center py-4">
+            <i class="fas fa-sign-out-alt mr-3"></i>Logout
+        </button> 
+    </form>
+
+</aside>

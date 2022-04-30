@@ -1,0 +1,52 @@
+<!--include Header-->
+<%- include('include/_header')%>
+<!--/include Header-->
+
+<!--include Aside-->
+<%- include('include/_aside')%>
+<!--/include Aside-->
+<div class="w-full overflow-x-hidden border-t flex flex-col">
+    <main class="w-full flex-grow p-6">
+        <h1 class="text-3xl font-bold text-black">User</h1>
+        <hr>
+    
+        <div class="w-full mt-4">
+
+            <div class="w-full lg:w-full mt-6 ">
+                <p class="text-xl pb-6 flex items-center">
+                    <i class="fas fa-plus mr-3"></i> Edit User
+                </p>
+                <% if (typeof errors != 'undefined') { %>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <% errors.forEach(error => { %>
+                                <li><% error.msg %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% } %>
+            </div>
+            <div class="leading-loose">
+                <form action="/admin/edit" method="post" class="p-10 bg-white rounded shadow-xl">            
+                    <input type="hidden" name="_id" value="<%= admins._id %>">
+                    <div class="mt-2 my-6">
+                        <label class="block text-lg text-gray-600" for="title">Username</label>
+                        <input class="w-1/3 px-3 py-2 text-gray-700 bg-gray-200 rounded" id="username" name="username" type="text" placeholder="Username" aria-label="Username" required value="<%= admins.username %>">
+                    </div>   
+                    <div class="mt-2 my-6">
+                        <label class="block text-lg text-gray-600" for="title">Password</label>
+                        <input class="w-1/3 px-3 py-2 text-gray-700 bg-gray-200 rounded" id="password" name="password" type="password" placeholder="Password" aria-label="Password" required>
+                    </div>     
+                    <input type="submit" name="submit" class="text-white bg-green-500 hover:bg-green-400 py-1 px-3 rounded" value="Edit Data">
+                    <a href="/admin" class="text-white bg-gray-700 hover:bg-gray-400 py-3 px-4 rounded"><i class="fas fa-chevron-circle-left"></i>Kembali</a>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!--include Footer-->
+<%- include('include/_footer')%>
+<!--/include Footer-->
+
+    
